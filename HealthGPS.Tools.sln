@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
@@ -10,9 +10,57 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{20943761-B0ED-484D-B185-50E12A6A7C3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linq", "Linq", "{27B2882C-8079-449F-BD24-8B6DE9523908}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Linq\Create_IHME_dataset.linq = Scripts\Linq\Create_IHME_dataset.linq
+		Scripts\Linq\Generate_BaselineRiskFactorsFile.linq = Scripts\Linq\Generate_BaselineRiskFactorsFile.linq
+		Scripts\Linq\InterventionResultsSummary.linq = Scripts\Linq\InterventionResultsSummary.linq
+		Scripts\Linq\Process_common.linq = Scripts\Linq\Process_common.linq
+		Scripts\Linq\Process_EnergyBalanceModel.linq = Scripts\Linq\Process_EnergyBalanceModel.linq
+		Scripts\Linq\Process_IHMECancersFiles.linq = Scripts\Linq\Process_IHMECancersFiles.linq
+		Scripts\Linq\Process_IHMEDatasetFilesBoD.linq = Scripts\Linq\Process_IHMEDatasetFilesBoD.linq
+		Scripts\Linq\Process_IHMEDiseaseFiles.linq = Scripts\Linq\Process_IHMEDiseaseFiles.linq
+		Scripts\Linq\Process_IHMEDiseaseFilesDW.linq = Scripts\Linq\Process_IHMEDiseaseFilesDW.linq
+		Scripts\Linq\Process_IHMEShared.linq = Scripts\Linq\Process_IHMEShared.linq
+		Scripts\Linq\Process_RelativeRiskFiles.linq = Scripts\Linq\Process_RelativeRiskFiles.linq
+		Scripts\Linq\Process_relative_risk_files.linq = Scripts\Linq\Process_relative_risk_files.linq
+		Scripts\Linq\Process_WPP2019_Mortality_File.linq = Scripts\Linq\Process_WPP2019_Mortality_File.linq
+		Scripts\Linq\Process_WPP2019_Period_Indicators_File.linq = Scripts\Linq\Process_WPP2019_Period_Indicators_File.linq
+		Scripts\Linq\Process_WPP2019_Period_Indicators_Int.linq = Scripts\Linq\Process_WPP2019_Period_Indicators_Int.linq
+		Scripts\Linq\Process_WPP2019_Population_Files.linq = Scripts\Linq\Process_WPP2019_Population_Files.linq
+		Scripts\Linq\Process_WPP2022_Mortality_File.linq = Scripts\Linq\Process_WPP2022_Mortality_File.linq
+		Scripts\Linq\Process_WPP2022_Period_Indicators_File.linq = Scripts\Linq\Process_WPP2022_Period_Indicators_File.linq
+		Scripts\Linq\Process_WPP2022_Population_Files.linq = Scripts\Linq\Process_WPP2022_Population_Files.linq
+		Scripts\Linq\Process_WPP_common.linq = Scripts\Linq\Process_WPP_common.linq
+		Scripts\Linq\UNWPP_Datasets_Converter.linq = Scripts\Linq\UNWPP_Datasets_Converter.linq
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "R", "R", "{4E0A35D8-4C24-4BD2-931C-2EA74CA44730}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\R\.Rhistory = Scripts\R\.Rhistory
+		Scripts\R\Example.R = Scripts\R\Example.R
+		Scripts\R\ExampleData.R = Scripts\R\ExampleData.R
+		Scripts\R\HealthcareExpenditure_ML.R = Scripts\R\HealthcareExpenditure_ML.R
+		Scripts\R\HealthcareExpenditure_ML_Arima.R = Scripts\R\HealthcareExpenditure_ML_Arima.R
+		Scripts\R\HealthGPS.Rproj = Scripts\R\HealthGPS.Rproj
+		Scripts\R\results_analysis.R = Scripts\R\results_analysis.R
+		Scripts\R\results_summary.R = Scripts\R\results_summary.R
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3B471001-37A9-4897-8313-91619BFDEE21}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Inputs.md = Docs\Inputs.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{27B2882C-8079-449F-BD24-8B6DE9523908} = {20943761-B0ED-484D-B185-50E12A6A7C3B}
+		{4E0A35D8-4C24-4BD2-931C-2EA74CA44730} = {20943761-B0ED-484D-B185-50E12A6A7C3B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B61A8664-21C1-45D0-942A-1DB3C96D8CEA}
