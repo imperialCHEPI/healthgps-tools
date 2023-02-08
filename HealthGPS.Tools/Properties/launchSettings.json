@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HealthGPS.Tools": {
+      "commandName": "Project",
+      "commandLineArgs": "output --file Config\\outputsettings.json"
+    }
+  }
+}

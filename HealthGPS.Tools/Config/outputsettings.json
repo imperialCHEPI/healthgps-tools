@@ -1,0 +1,77 @@
+{
+  "version": 3,
+  "OutputOptions": {
+    "Age": {
+      "Start": 0,
+      "Finish": 100
+    },
+    "Run": {
+      "Start": 1,
+      "Finish": 50
+    },
+    "Year": {
+      "Start": 2010,
+      "Finish": 2050
+    },
+    "Delimiter": ",",
+    "OutputFilename": "{POLICY}Results_diseases_{NUMBER}_runs_{RUNS}.json",
+    "MaxResultFiles": null,
+    "BaselineDataset": {
+      "IsActive": true,
+      "OutputFilename": "Baseline_dataset_{RUNS}.csv",
+      "FactorsFilter": []
+    },
+    "RuntimeLogs": {
+      "IsActive": true,
+      "SourceSubFolder": "logs",
+      "OutputFilename": "ModelRuntime.csv"
+    },
+    "HCEDataset": {
+      "IsActive": true,
+      "OutputFilename": "HCE_analysis_dataset_runs_{RUNS}_age_{FROM}_{TO}_{STATS}.csv",
+      "FactorsFilter": [
+        "alzheimer",
+        "anxiety",
+        "asthma",
+        "dermatitis",
+        "breastcancer",
+        "cataract",
+        "pulmonar",
+        "cirrhosis",
+        "colorectalcancer",
+        "diabetes",
+        "esophaguscancer",
+        "gallbladder",
+        "gallbladdercancer",
+        "reflux",
+        "gout",
+        "kidneycancer",
+        "livercancer",
+        "lowbackpain",
+        "depression",
+        "migraine",
+        "multiplesclerosis",
+        "osteoarthritiship",
+        "osteoarthritisknee",
+        "ovarycancer",
+        "pancreascancer",
+        "pancreatitis",
+        "parkinson",
+        "psoriasis",
+        "arthritis",
+        "stomachcancer",
+        "thyroidcancer"
+      ]
+    }
+  },
+  "Platform": {
+    "Windows": {
+      "SourceFolder": "C:/temp/Working/Results",
+      "OutputFolder": "C:/temp/Working/Results/Summary"
+    },
+    "Unix": {
+      "SourceFolder": "/home/israel/healthgps/results",
+      "OutputFolder": "/home/israel/healthgps/results/summary"
+    }
+  }
+}
