@@ -1,0 +1,34 @@
+{
+  "dataset": {
+    "filename": "France.DataFile.csv",
+    "format": "csv",
+    "delimiter": ","
+  },
+  "modelling": {
+    "risk_factors": {
+      "Year": 0,
+      "Gender": 0,
+      "Age": 0,
+      "Age2": 0,
+      "Age3": 0,
+      "SES": 0,
+      "Sodium": 1,
+      "Protein": 1,
+      "Fat": 1,
+      "PA": 2,
+      "Energy": 2,
+      "BMI": 3
+    },
+    "dynamic_risk_factor": "Year",
+    "models": {
+      "static": {
+        "filename": "France.HLM.Json",
+        "include_dynamic_factor": false
+      },
+      "dynamic": {
+        "filename": "France.DHLM.Json",
+        "include_dynamic_factor": true
+      }
+    }
+  }
+}

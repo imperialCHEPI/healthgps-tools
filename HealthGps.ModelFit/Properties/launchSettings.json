@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "HealthGps.ModelFit": {
+      "commandName": "Project",
+      "commandLineArgs": "risk-factor --file Example\\France.RiskFactor.json",
+      "workingDirectory": "C:\\Source\\imperialCHEPI\\healthgps-tools\\HealthGps.ModelFit"
+    }
+  }
+}
