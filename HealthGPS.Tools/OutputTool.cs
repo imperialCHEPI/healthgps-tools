@@ -1,12 +1,11 @@
-﻿using System;
+﻿using HealthGPS.Tools.Output;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-
-using Microsoft.Extensions.Configuration;
-using HealthGPS.Tools.Output;
 
 namespace HealthGPS.Tools;
 
@@ -16,7 +15,7 @@ public class OutputTool : IHealthGpsTool
 
     public OutputTool(FileInfo configFile)
     {
-        Name = "Output processing tool";
+        Name = "Output Tool";
         Logger = new StringWriter();
 
         var builder = new ConfigurationBuilder()
@@ -101,7 +100,7 @@ public class OutputTool : IHealthGpsTool
         {
             throw new InvalidDataException("Invalid configuration v3 format, missing: OutputOptions section.");
         }
-        
+
         var options = optionsSection.Get<Dto.OutputToolOptionsDto>();
 
         var baseline = options.BaselineDataset;

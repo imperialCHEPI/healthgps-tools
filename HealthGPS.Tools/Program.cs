@@ -4,26 +4,28 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace HealthGPS.Tools;
 
 /// <summary>
 /// Health-GPS supporting tools CLI definition.
 /// </summary>
-class Program
+public class Program
 {
     /// <summary>
     /// The application entry point.
     /// </summary>
     /// <param name="args">The command line arguments. </param>
     /// <returns>The execution result, 0 for success, anything else for failure.</returns>
-    static int Main(string[] args)
+    static async Task<int> Main(string[] args)
     {
         var appVersion = GetAppVersion();
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("{1}# HealthGPS Supporting Tools v{0} #{1}", appVersion, Environment.NewLine);
         Console.ResetColor();
 
+        var returnCode = 0;
         var rootCommand = new RootCommand($"Health-GPS Tools CLI options.");
 
         var fileOption = CreateFileOption();
@@ -33,53 +35,54 @@ class Program
         rootCommand.AddCommand(outputCommand);
         outputCommand.SetHandler((file) =>
         {
-            RunOutputCommand(file);
+            returnCode = RunOutputCommand(file);
         }, fileOption);
 
         var timer = new Stopwatch();
-        var returnValue = 0;
-        try
+        await rootCommand.InvokeAsync(args);
+        timer.Stop();
+        if (returnCode == 0)
         {
-            timer.Start();
-            returnValue = rootCommand.InvokeAsync(args).Result;
-        }
-        catch (Exception ex)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(GetMessageFromException(ex));
-            Console.ResetColor();
-            Console.WriteLine(ex.StackTrace);
-        }
-        finally
-        {
-            timer.Stop();
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Total elapsed time: {timer.Elapsed.TotalSeconds} seconds.");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("# Goodbye from Health-GPS Tools #");
-            Console.ResetColor();
-            Console.WriteLine();
+            Console.WriteLine($"Completed, elapsed time: {timer.Elapsed.TotalSeconds} seconds.");
         }
 
-        return returnValue;
+        Console.WriteLine();
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("# Goodbye from Health-GPS Tools #");
+        Console.ResetColor();
+        Console.WriteLine();
+        return returnCode;
     }
 
     /// <summary>
     /// Run the Simulation Output files processing command.
     /// </summary>
     /// <param name="optionsFile">The output tool options file.</param>
-    private static void RunOutputCommand(FileInfo optionsFile)
+    private static int RunOutputCommand(FileInfo optionsFile)
     {
-        var commandTool = new OutputTool(optionsFile);
-        Console.WriteLine();
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine($"Starting: {commandTool.Name} ...");
+        Console.WriteLine($"Starting Health-GPS output processing ...");
         Console.ResetColor();
         Console.WriteLine();
-        commandTool.Execute();
-        Console.WriteLine(commandTool.Logger);
+        try
+        {
+            var commandTool = new OutputTool(optionsFile);
+            commandTool.Execute();
+            Console.WriteLine(commandTool.Logger);
+            return 0;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(GetMessageFromException(ex));
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine(ex.StackTrace);
+            return 1;
+        }
     }
 
     /// <summary>
@@ -88,7 +91,7 @@ class Program
     /// <returns>The file command option</returns>
     private static Option<FileInfo> CreateFileOption()
     {
-        return new Option<FileInfo>(
+        var option = new Option<FileInfo>(
             name: "--file",
             description: "Configuration file for the command.",
             isDefault: true,
@@ -109,6 +112,10 @@ class Program
 
                 return new FileInfo(filePath);
             });
+
+        option.AddAlias("-f");
+        option.IsRequired = true;
+        return option;
     }
 
     /// <summary>
