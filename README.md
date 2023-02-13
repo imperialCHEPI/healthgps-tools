@@ -103,16 +103,28 @@ Both output files are written to the same folder containing the configuration fi
 
 ### Health-GPS Tools
 
-This tool requires .NET 6.0 or newer, to build the application for running on *Imperial HPC*, use the following *command* from inside the *Tools*' project folder:
+Process Health-GPS output raw data and optionally logs, which can be several gigabytes in size, depending on the experiment, to create small datasets with tabulated statistical summaries, ready for consumption and easy to copy over the network. This tool is *cross-platform*, written in C# targeting .NET 6.0 or newer, and can run on *Imperial HPC* without any installation, see below for details.
+
+A single command: `output` is current provided to process the various outputs and log files produced by health-GPS in a folder when running in batch mode. The command outputs are written to pre-configured folder. The source code provides an example configuration file ([output_settings.json](https://github.com/imperialCHEPI/healthgps-tools/blob/main/HealthGPS.Tools/Config/output_settings.json)) which users can adapt for new experiments. The command line to execute the action is shown bellow:
+
+```bash
+> HealthGps.Tools output --file Config\\output_settings.json
+```
+
+>**Note**  
+> Log files must be copied to a sub-folder of the `source` folder as given in the configuration file.
+
+### Cross-Platform Build
+
+HealthGPS tools can be built by one platform to target different platforms, where the application needs to run, by simply providing a valid runtime identifier ([RID](https://learn.microsoft.com/en-us/dotnet/core/rid-catalog)), for example: `linux-x64`, `win-x64`, `osx-x64`, and `ios-arm64`. The RIDs are used by .NET packages to represent platform-specific environments and building the application.
+
+To build the tools for running on the Linux-based *Imperial HPC* as a single, self-contained executable, the following *command* can be invoked from inside the *Tools*' project folder:
 
 ```bash
 > dotnet publish -r linux-x64 -c Release --self-contained true -p:PublishSingleFile=true -p:PublishReadyToRunComposite=true -p:EnableCompressionInSingleFile=true
 ```
 
-This will create a *single executable* file, which you can copy and run on the HPC by itself without any installation requirement.
+This will create a *single executable* file, which you can simply copy to the HPC and run by itself without any installation requirement. To build the tools to run on different platforms, change the runtime, `-r`, command argument to the respective RID values, and build it again.
 
-A single command: output is current provided to process the various outputs and log files produced by health-GPS batch mode experiments. The command outputs the processed files in the same folder. A configuration file example ([output_settings.json](https://github.com/imperialCHEPI/healthgps-tools/blob/main/HealthGPS.Tools/Config/outputsettings.json)) is provided in the source code. The command line to execute the action is shown bellow:
 
-```bash
-> HealthGps.Tools output --file Config\\output_settings.json
-```
+
