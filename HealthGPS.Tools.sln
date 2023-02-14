@@ -51,7 +51,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "R", "R", "{4E0A35D8-4C24-4B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3B471001-37A9-4897-8313-91619BFDEE21}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\Inputs.md = Docs\Inputs.md
+		Docs\synthetic_dataset.md = Docs\synthetic_dataset.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthGPS.Tools", "HealthGPS.Tools\HealthGPS.Tools.csproj", "{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}"
