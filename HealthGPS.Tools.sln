@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linq", "Linq", "{27B2882C-8
 		Scripts\Linq\Create_IHME_dataset.linq = Scripts\Linq\Create_IHME_dataset.linq
 		Scripts\Linq\Generate_BaselineRiskFactorsFile.linq = Scripts\Linq\Generate_BaselineRiskFactorsFile.linq
 		Scripts\Linq\InterventionResultsSummary.linq = Scripts\Linq\InterventionResultsSummary.linq
+		Scripts\Linq\ISO3166-1-Countries.csv = Scripts\Linq\ISO3166-1-Countries.csv
 		Scripts\Linq\Process_common.linq = Scripts\Linq\Process_common.linq
 		Scripts\Linq\Process_EnergyBalanceModel.linq = Scripts\Linq\Process_EnergyBalanceModel.linq
 		Scripts\Linq\Process_IHMECancersFiles.linq = Scripts\Linq\Process_IHMECancersFiles.linq
@@ -50,7 +51,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "R", "R", "{4E0A35D8-4C24-4B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{3B471001-37A9-4897-8313-91619BFDEE21}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\Inputs.md = Docs\Inputs.md
+		Docs\synthetic_dataset.md = Docs\synthetic_dataset.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthGPS.Tools", "HealthGPS.Tools\HealthGPS.Tools.csproj", "{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}"
@@ -61,7 +62,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net48Test", "Net48Test\Net4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreTest", "NetCoreTest\NetCoreTest.csproj", "{7A654B83-281F-480C-950E-7CDC81C2DA14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthGps.ModelFit", "HealthGps.ModelFit\HealthGps.ModelFit.csproj", "{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthGps.ModelFit", "HealthGps.ModelFit\HealthGps.ModelFit.csproj", "{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IHME", "IHME", "{EE920DCF-E13E-4977-8CA3-E3D72FB00CDC}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Linq\IHME\diseases.json = Scripts\Linq\IHME\diseases.json
+		Scripts\Linq\IHME\IHME-ISOCountry-Mapping.csv = Scripts\Linq\IHME\IHME-ISOCountry-Mapping.csv
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,44 +76,24 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Debug|Any CPU.Build.0 = Debug|x64
 		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Debug|x64.ActiveCfg = Debug|x64
 		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Debug|x64.Build.0 = Debug|x64
-		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Release|x64.ActiveCfg = Release|x64
 		{4AB78D37-5111-4CCE-B95C-799C1FAFA53D}.Release|x64.Build.0 = Release|x64
-		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Debug|x64.ActiveCfg = Debug|x64
 		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Debug|x64.Build.0 = Debug|x64
-		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Release|x64.ActiveCfg = Release|x64
 		{E17C991D-14AD-4D9A-9AED-4A868AC7C899}.Release|x64.Build.0 = Release|x64
-		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Debug|x64.ActiveCfg = Debug|x64
 		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Debug|x64.Build.0 = Debug|x64
-		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Release|x64.ActiveCfg = Release|x64
 		{FD37EC8F-01F6-4385-9A61-D3A522BCE9F6}.Release|x64.Build.0 = Release|x64
-		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Debug|x64.ActiveCfg = Debug|x64
 		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Debug|x64.Build.0 = Debug|x64
-		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Release|x64.ActiveCfg = Release|x64
 		{7A654B83-281F-480C-950E-7CDC81C2DA14}.Release|x64.Build.0 = Release|x64
-		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Debug|x64.ActiveCfg = Debug|x64
 		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Debug|x64.Build.0 = Debug|x64
-		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Release|x64.ActiveCfg = Release|x64
 		{7BD82F05-1E1D-4BEC-B42E-80D8EA9CA257}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
@@ -116,6 +103,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{27B2882C-8079-449F-BD24-8B6DE9523908} = {20943761-B0ED-484D-B185-50E12A6A7C3B}
 		{4E0A35D8-4C24-4BD2-931C-2EA74CA44730} = {20943761-B0ED-484D-B185-50E12A6A7C3B}
+		{EE920DCF-E13E-4977-8CA3-E3D72FB00CDC} = {27B2882C-8079-449F-BD24-8B6DE9523908}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B61A8664-21C1-45D0-942A-1DB3C96D8CEA}

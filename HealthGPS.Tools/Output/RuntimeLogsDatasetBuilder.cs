@@ -172,7 +172,7 @@ public class RuntimeLogsDatasetBuilder
         var scenarioIdx = fields[0].IndexOf("-");
         if (scenarioIdx > 0)
         {
-            return fields[0].Substring(scenarioIdx + 1).Trim();
+            return fields[0][(scenarioIdx + 1)..].Trim();
         }
 
         var experiment = "experiment";
@@ -192,7 +192,7 @@ public class RuntimeLogsDatasetBuilder
             var runIdx = fields[1].IndexOf("ended", StringComparison.OrdinalIgnoreCase);
             if (runIdx > 0)
             {
-                return int.Parse(fields[1].Substring(0, runIdx));
+                return int.Parse(fields[1][..runIdx]);
             }
         }
 

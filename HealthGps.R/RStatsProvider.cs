@@ -1,9 +1,10 @@
-﻿using RDotNet;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+
+using RDotNet;
 
 namespace HealthGps.R
 {
@@ -174,10 +175,7 @@ namespace HealthGps.R
         /// <inheritdoc/>
         public void Dispose()
         {
-            if (provider != null)
-            {
-                provider.Dispose();
-            }
+            provider?.Dispose();
         }
 
         /// <summary>

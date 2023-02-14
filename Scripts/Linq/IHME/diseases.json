@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "settings": {
+    "datatype": "disease",
+    "maximum_age": 100,
+    "value_units": 100000.0,
+    "smoothing_times": 50,
+    "root_folder": "C:\\Work\\Data\\IHME",
+    "location_filename": "IHME-ISOCountry-Mapping.csv",
+    "diseases_folder": "Diseases",
+    "cancers_folder": "Cancers",
+    "cancer_years": 5,
+    "datasource_folder": "Source",
+    "datasource_year": 2019,
+    "output_folder": "Output"
+  },
+  "diseases": {
+    "alzheimer": {
+      "overwrite": false,
+      "folder_name": "Alzheimer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "angina": {
+      "overwrite": false,
+      "folder_name": "Angina",
+      "input_folders": {
+        "prevalence": "Prevalence",
+        "incidence": "Incidence",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "anxiety": {
+      "overwrite": false,
+      "folder_name": "Anxiety Disorder",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "asthma": {
+      "overwrite": false,
+      "folder_name": "Asthma",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "dermatitis": {
+      "overwrite": false,
+      "folder_name": "Atopic Dermatitis",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "cataract": {
+      "overwrite": false,
+      "folder_name": "Blindness Due to Cataract Unsqueezed",
+      "input_folders": {
+        "prevalence": "Prevalence",
+        "incidence": "Incidence",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "pulmonar": {
+      "overwrite": false,
+      "folder_name": "Chronic Obstructive Pulmonary Disease",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "pancreatitis": {
+      "overwrite": false,
+      "folder_name": "Chronic Pancreatitis",
+      "input_folders": {
+        "prevalence": "Prevalence",
+        "incidence": "Incidence",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "cirrhosis": {
+      "overwrite": false,
+      "folder_name": "Cirrhosis",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "diabetes": {
+      "overwrite": false,
+      "folder_name": "Diabetes",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "gallbladder": {
+      "overwrite": false,
+      "folder_name": "Gallbladder and Biliary Diseases",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "reflux": {
+      "overwrite": false,
+      "folder_name": "Gastroesophageal Reflux Disease",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "gout": {
+      "overwrite": false,
+      "folder_name": "Gout",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "lowbackpain": {
+      "overwrite": false,
+      "folder_name": "Low Back Pain",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "depression": {
+      "overwrite": false,
+      "folder_name": "Major Depressive Disorder",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "migraine": {
+      "overwrite": false,
+      "folder_name": "Migraine",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "multiplesclerosis": {
+      "overwrite": false,
+      "folder_name": "Multiple Sclerosis",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "myocardial": {
+      "overwrite": false,
+      "folder_name": "Myocardial Infarction",
+      "input_folders": {
+        "prevalence": "Prevalence",
+        "incidence": "Incidence",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "osteoarthritiship": {
+      "overwrite": false,
+      "folder_name": "Osteoarthritis of the hip",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "osteoarthritisknee": {
+      "overwrite": false,
+      "folder_name": "Osteoarthritis Of The Knee",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "parkinson": {
+      "overwrite": false,
+      "folder_name": "Parkinson Disease",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "psoriasis": {
+      "overwrite": false,
+      "folder_name": "Psoriasis",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "arthritis": {
+      "overwrite": false,
+      "folder_name": "Rheumatoid Arthritis",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    },
+    "visionimpairment": {
+      "overwrite": false,
+      "folder_name": "Vision Impairment Due to Cataract Unsqueezed",
+      "input_folders": {
+        "prevalence": "Prevalence",
+        "incidence": "Incidence",
+        "remission": "Remission",
+        "mortality": "Cause Specific Mortality"
+      }
+    }
+  },
+  "cancers": {
+    "breastcancer": {
+      "overwrite": true,
+      "folder_name": "Breast Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "colorectalcancer": {
+      "overwrite": true,
+      "folder_name": "Colorectum Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "esophaguscancer": {
+      "overwrite": true,
+      "folder_name": "Esophagus Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "gallbladdercancer": {
+      "overwrite": true,
+      "folder_name": "Gallbladder Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "kidneycancer": {
+      "overwrite": true,
+      "folder_name": "Kidney Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "livercancer": {
+      "overwrite": true,
+      "folder_name": "Liver Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "ovarycancer": {
+      "overwrite": true,
+      "folder_name": "Ovary Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "pancreascancer": {
+      "overwrite": true,
+      "folder_name": "Pancreas Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "stomachcancer": {
+      "overwrite": true,
+      "folder_name": "Stomach Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    },
+    "thyroidcancer": {
+      "overwrite": true,
+      "folder_name": "Thyroid Cancer",
+      "input_folders": {
+        "prevalence": "",
+        "incidence": "",
+        "remission": "",
+        "mortality": ""
+      },
+      "raw_parameters_folder": "Cause Specific Mortality"
+    }
+  }
+}
