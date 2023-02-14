@@ -114,7 +114,7 @@ public class SummaryKey : IEquatable<SummaryKey>, IComparable<SummaryKey>
 
     public static bool operator ==(SummaryKey left, SummaryKey right)
     {
-        if ((object)left == null || (object)right == null)
+        if (left is null || right is null)
             return Equals(left, right);
 
         return left.Equals(right);
@@ -122,7 +122,7 @@ public class SummaryKey : IEquatable<SummaryKey>, IComparable<SummaryKey>
 
     public static bool operator !=(SummaryKey left, SummaryKey right)
     {
-        if ((object)left == null || (object)right == null)
+        if (left is null || right is null)
             return !Equals(left, right);
 
         return !left.Equals(right);

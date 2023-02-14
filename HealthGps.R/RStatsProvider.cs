@@ -174,10 +174,7 @@ namespace HealthGps.R
         /// <inheritdoc/>
         public void Dispose()
         {
-            if (provider != null)
-            {
-                provider.Dispose();
-            }
+            provider?.Dispose();
         }
 
         /// <summary>
